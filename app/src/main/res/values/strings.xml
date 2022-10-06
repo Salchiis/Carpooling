@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Carpooling</string>
+    <string name="one_app_for">One app for</string>
+    <string name="any_currencies">any currencies</string>
+    <string name="sign_in">Sign in</string>
+    <string name="logo">logo</string>
+</resources>
