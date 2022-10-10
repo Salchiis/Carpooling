@@ -1,5 +1,6 @@
 package com.example.carpooling;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -55,6 +56,8 @@ public class ProfileFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Button HelpBtn;
+       // HelpBtn = (Button);
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -67,5 +70,10 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false);
+    }
+
+    public void Btn_pumpInfo_Clicked(View v){
+        Intent myIntent = new Intent(v.getContext(), Questions1.class);
+        startActivity(myIntent);
     }
 }
