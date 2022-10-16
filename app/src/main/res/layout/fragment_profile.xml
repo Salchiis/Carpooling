@@ -195,11 +195,11 @@
         app:layout_constraintVertical_bias="0.051" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/LogOut"
         android:layout_width="230dp"
         android:layout_height="40dp"
-        android:text="Log out"
         android:backgroundTint="@color/bluerey"
+        android:text="Log Out"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

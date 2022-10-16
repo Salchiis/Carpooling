@@ -11,15 +11,14 @@
         android:layout_width="141dp"
         android:layout_height="55dp"
         android:backgroundTint="#009688"
-        android:onClick="SubmitLogin"
         android:text="Sign in"
         app:cornerRadius="40px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.473" />
+        app:layout_constraintVertical_bias="0.485" />
 
     <EditText
         android:id="@+id/password1"
@@ -94,8 +93,21 @@
         android:text="Forgot your password?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="0.194"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568" />
+        app:layout_constraintVertical_bias="0.577" />
+
+    <Button
+        android:id="@+id/registerB"
+        android:layout_width="131dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="48dp"
+        android:text="Register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.486" />
 </androidx.constraintlayout.widget.ConstraintLayout>

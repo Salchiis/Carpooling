@@ -9,21 +9,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.carpooling.databinding.ActivityMainBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 ActivityMainBinding binding;
-
-    public void changeScreen(){
-        System.out.println("asd");
-    }
+    Button Btn_LogOut;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
         replaceFragment(new HomeFragment());
 
         binding.bottomNavigationView.setOnItemSelectedListener(item ->{
@@ -31,23 +33,31 @@ ActivityMainBinding binding;
                 case R.id.home:
                     replaceFragment(new HomeFragment());
                     break;
-
                 case R.id.activity:
                     replaceFragment(new ActivityFragment());
-
                     break;
-
                 case R.id.profile:
                     replaceFragment(new ProfileFragment());
-
                     break;
-
             }
 
 
                 return  true;
         });
+        Btn_LogOut = findViewById(R.id.LogOut);
+        Btn_LogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                mAuth.signOut();
+                Toast.makeText(MainActivity.this,"Logged out",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this,Login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
+
 
     private void replaceFragment(Fragment fragment){
         //buttonN = (Button)findViewById(R.id.buttonN);
