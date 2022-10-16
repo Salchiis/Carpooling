@@ -3,6 +3,7 @@ package com.example.carpooling;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -51,7 +52,9 @@ public class ForgetPassword extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
                     Toast.makeText(ForgetPassword.this,"Check your email to reset your password",Toast.LENGTH_LONG).show();
-
+                    Intent intent = new Intent(ForgetPassword.this, Login.class);
+                    startActivity(intent);
+                    finish();
                 }else{
                     Toast.makeText(ForgetPassword.this,"Algo fallo",Toast.LENGTH_LONG).show();
 

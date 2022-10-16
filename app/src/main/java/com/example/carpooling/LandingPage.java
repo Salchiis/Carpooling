@@ -17,11 +17,13 @@ public class LandingPage extends AppCompatActivity {
     public void Btn_Sign_In(View v){
         Intent myIntent = new Intent(v.getContext(), Login.class);
         startActivity(myIntent);
+        //finish();
     }
 
     public void Btn_Create_Account(View v){
         Intent myIntent = new Intent(v.getContext(), Register1.class);
         startActivity(myIntent);
+        //finish();
     }
 
 }

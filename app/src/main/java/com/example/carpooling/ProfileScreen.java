@@ -20,10 +20,13 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ProfileScreen extends AppCompatActivity {
 
-        Button logOut,helpButton;
+        Button logOut;
+        TextView helpButton;
         FirebaseUser user;
         DatabaseReference reference;
         String userID;
+        private static final int TIME_DELAY = 2000;
+        private static long back_pressed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +41,10 @@ public class ProfileScreen extends AppCompatActivity {
 
                 Intent myIntent = new Intent(ProfileScreen.this, LandingPage.class);
                 startActivity(myIntent);
+                finish();
             }
         });
+
 
         helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,5 +84,17 @@ public class ProfileScreen extends AppCompatActivity {
                 Toast.makeText(ProfileScreen.this, "Algo fallo", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (back_pressed + TIME_DELAY > System.currentTimeMillis()) {
+            super.onBackPressed();
+System.exit(0);
+        } else {
+            Toast.makeText(getBaseContext(), "Press once again to exit!",
+                    Toast.LENGTH_SHORT).show();
+        }
+        back_pressed = System.currentTimeMillis();
     }
 }

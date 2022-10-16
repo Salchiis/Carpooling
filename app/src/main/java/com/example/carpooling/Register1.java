@@ -112,7 +112,9 @@ public class Register1 extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
                                 Toast.makeText(Register1.this, "User Created", Toast.LENGTH_LONG).show();
-
+          Intent intent = new Intent(Register1.this, LandingPage.class);
+                    startActivity(intent);
+                    finish();
                             }else{
                                 Toast.makeText(Register1.this, "Failed to register, try again", Toast.LENGTH_LONG).show();
 

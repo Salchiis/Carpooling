@@ -97,7 +97,7 @@ public class Login extends AppCompatActivity{
                             Toast.makeText(Login.this,"Logged in succesfull",Toast.LENGTH_LONG).show();
                             Intent myIntent = new Intent(Login.this, ProfileScreen.class);
                             startActivity(myIntent);
-                            //finish();
+                            finish();
                         }else{
                             user.sendEmailVerification();
                             Toast.makeText(Login.this,"Check email to verify account",Toast.LENGTH_LONG).show();
