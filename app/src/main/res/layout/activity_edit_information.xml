@@ -37,14 +37,14 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/editPerfilButton"
         android:layout_width="137dp"
         android:layout_height="50dp"
         android:drawableTop="@drawable/ic_baseline_person_24"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="Perfil"
-        android:textSize="10dp"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -67,14 +67,14 @@
         app:layout_constraintVertical_bias="0.16" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/editActividadButton"
         android:layout_width="137dp"
         android:layout_height="50dp"
         android:drawableTop="@drawable/ic_baseline_menu_24"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="Actividad"
-        android:textSize="10dp"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,7 +99,7 @@
         app:layout_constraintVertical_bias="0.364" />
 
     <Button
-        android:id="@+id/homeButton2"
+        android:id="@+id/editHomeButton"
         android:layout_width="137dp"
         android:layout_height="50dp"
         android:width="5dp"
@@ -108,8 +108,8 @@
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="Home"
-        android:textSize="10dp"
 
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

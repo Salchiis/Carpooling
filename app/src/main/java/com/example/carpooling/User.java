@@ -2,6 +2,7 @@ package com.example.carpooling;
 
 public class User {
     public String name,lastname,phone,email;
+    public boolean conductor= false;
 
     public  User(){
 
