@@ -37,7 +37,7 @@ public class ProfileScreen extends AppCompatActivity {
         profileHomeButton = findViewById(R.id.profileHomeButton);
         profileActividadButton = findViewById(R.id.profileActividadButton);
 
-        profileHomeButton.setOnClickListener(new View.OnClickListener() {
+        profileHomeButton.setOnClickListener(new View.OnClickListener() { //para ur a home
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ProfileScreen.this, HomeScreen.class);
@@ -46,7 +46,7 @@ public class ProfileScreen extends AppCompatActivity {
             }
         });
 
-        profileActividadButton.setOnClickListener(new View.OnClickListener() {
+        profileActividadButton.setOnClickListener(new View.OnClickListener() {//Para ira actividad
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ProfileScreen.this, ActivityScreen.class);
@@ -55,7 +55,7 @@ public class ProfileScreen extends AppCompatActivity {
             }
         });
 
-        logOut.setOnClickListener(new View.OnClickListener() {
+        logOut.setOnClickListener(new View.OnClickListener() { //Boton para hacer logout
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
@@ -67,7 +67,7 @@ public class ProfileScreen extends AppCompatActivity {
             }
         });
 
-        editProfileButton.setOnClickListener(new View.OnClickListener() {
+        editProfileButton.setOnClickListener(new View.OnClickListener() { //Boton para ir a la pantalla de editar perfil
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ProfileScreen.this, EditInformation.class);
@@ -75,7 +75,7 @@ public class ProfileScreen extends AppCompatActivity {
             }
         });
 
-        helpButton.setOnClickListener(new View.OnClickListener() {
+        helpButton.setOnClickListener(new View.OnClickListener() { //Boton para ir a las preguntas frecuentes
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ProfileScreen.this, Questions1.class);
@@ -92,7 +92,7 @@ public class ProfileScreen extends AppCompatActivity {
         final TextView emailTextView = findViewById(R.id.emailAddress);
         final TextView phoneTextView = findViewById(R.id.phoneAddress);
 
-        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() { //Para jalar la info del usuario de la db
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                     User userProfile = snapshot.getValue(User.class);

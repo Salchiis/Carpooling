@@ -26,16 +26,17 @@ public class Login extends AppCompatActivity{
     TextView register,forgetPassword;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { //Metodo principal
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Email1 = (EditText) findViewById(R.id.email1);
+        Email1 = (EditText) findViewById(R.id.email1); //Buscar  por ids cada elemento
         Pass1 = (EditText)findViewById(R.id.password1);
         SignIn = findViewById(R.id.SignIn);
         mAuth = FirebaseAuth.getInstance();
         forgetPassword = (TextView) findViewById(R.id.forgotPassword);
-        forgetPassword.setOnClickListener(new View.OnClickListener() {
+
+        forgetPassword.setOnClickListener(new View.OnClickListener() { //Pantalla para ir a cambiar password
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(Login.this, ForgetPassword.class);
@@ -44,7 +45,7 @@ public class Login extends AppCompatActivity{
         });
 
     register = (TextView) findViewById(R.id.registerB);
-    register.setOnClickListener(new View.OnClickListener() {
+    register.setOnClickListener(new View.OnClickListener() { //Pantalla para ir a registrar
         @Override
         public void onClick(View view) {
             Intent myIntent = new Intent(Login.this, Register1.class);
@@ -54,7 +55,7 @@ public class Login extends AppCompatActivity{
     });
 
 
-    SignIn.setOnClickListener(new View.OnClickListener() {
+    SignIn.setOnClickListener(new View.OnClickListener() { //Meotod para hacer login
             @Override
             public void onClick(View view) {
         LoginUser();
@@ -63,49 +64,49 @@ public class Login extends AppCompatActivity{
     }
 
 
-    private void LoginUser(){
-        String strEmail = Email1.getText().toString();
+    private void LoginUser(){ //Metodo para login
+        String strEmail = Email1.getText().toString(); //Convertir elementos a texto
         String strPassword = Pass1.getText().toString();
-        if (strEmail.isEmpty()) {
-            Email1.setError("Email can not Empty");
+        if (strEmail.isEmpty()) { //Que el email no este vacio
+            Email1.setError("Email no puede estar vacio");
             Email1.requestFocus();
             return;
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(strEmail).matches()) {
-            Email1.setError("Provide a valid mail pls");
+        if (!Patterns.EMAIL_ADDRESS.matcher(strEmail).matches()) { //Asegurar que el email sea valido
+            Email1.setError("Ingresa un email valido");
             Email1.requestFocus();
             return;
         }
-        if (strPassword.isEmpty()) {
+        if (strPassword.isEmpty()) { //Que la contraseña no este vacia
             Pass1.setError("Enter password");
             Pass1.requestFocus();
             return;
         }
-        if (strPassword.length() < 6) {
+        if (strPassword.length() < 6) { //Que la contraseña sea mayor a 6 caracteres
             Pass1.setError("Password should be 6 characters");
             Pass1.requestFocus();
             return;
         }
 
-        mAuth.signInWithEmailAndPassword(strEmail,strPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(strEmail,strPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() { //Metodo de fire base para mandar la info
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                        if (user.isEmailVerified()){
-                            Toast.makeText(Login.this,"Logged in succesfull",Toast.LENGTH_LONG).show();
+                        if (user.isEmailVerified()){ //Si existe el usuario
+                            Toast.makeText(Login.this,"Loggin correcto",Toast.LENGTH_LONG).show();
                             Intent myIntent = new Intent(Login.this, ProfileScreen.class);
                             startActivity(myIntent);
                             finish();
                         }else{
-                            user.sendEmailVerification();
-                            Toast.makeText(Login.this,"Check email to verify account",Toast.LENGTH_LONG).show();
+                            user.sendEmailVerification(); //Si es la primera vez que se logea que verifique su mail
+                            Toast.makeText(Login.this,"Revisa tu mail para verificar tu cuenta",Toast.LENGTH_LONG).show();
 
                         }
 
 
-                    }else{
+                    }else{ //Error en caso de no poder conseguir la instancia del usuario
                         Toast.makeText(Login.this,"Logged error ",Toast.LENGTH_SHORT).show();
 
 

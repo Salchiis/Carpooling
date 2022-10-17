@@ -23,17 +23,17 @@ import java.util.Map;
 
 public class EditInformation extends AppCompatActivity {
 
-    Button update;
-    EditText name,lastname,phone,location;
-    FirebaseUser user;
-    FirebaseAuth mAuth;
-TextView editPerfilButton,editActividadButton,editHomeButton;
-    DatabaseReference reference;
-    String userID;
+    Button update;  //Boton para hacer el update
+    EditText name,lastname,phone,location; //Etiquetas a modificar
+    FirebaseUser user; //Usuario activo
+    FirebaseAuth mAuth; //Autentificador con firebase
+    TextView editPerfilButton,editActividadButton,editHomeButton;
+    DatabaseReference reference;    //Referencia  a que tablas vamos a mdooficiar
+    String userID; //Guardaremos el id del usuario para saber que campo modificiar
     private static final int TIME_DELAY = 2000;
     private static long back_pressed;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { //Encontrar todo por ID
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_information);
         name = findViewById(R.id.nameAddress2);
@@ -42,13 +42,13 @@ TextView editPerfilButton,editActividadButton,editHomeButton;
         location = findViewById(R.id.locationAddress2);
         update = findViewById(R.id.updateButton);
         user = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users");
+        reference = FirebaseDatabase.getInstance().getReference("Users"); //Hacemos refencia a nuestra tabla Users
         userID = user.getUid();
         editPerfilButton = findViewById(R.id.editPerfilButton);
         editActividadButton = findViewById(R.id.editActividadButton);
         editHomeButton = findViewById(R.id.editHomeButton);
 
-        editPerfilButton.setOnClickListener(new View.OnClickListener() {
+        editPerfilButton.setOnClickListener(new View.OnClickListener() { //Boton que nos lleva al perfil
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(EditInformation.this, ProfileScreen.class);
@@ -57,7 +57,7 @@ TextView editPerfilButton,editActividadButton,editHomeButton;
             }
         });
 
-        editHomeButton.setOnClickListener(new View.OnClickListener() {
+        editHomeButton.setOnClickListener(new View.OnClickListener() { //Boton que nos lleva a Home
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(EditInformation.this, HomeScreen.class);
@@ -66,7 +66,7 @@ TextView editPerfilButton,editActividadButton,editHomeButton;
             }
         });
 
-        editActividadButton.setOnClickListener(new View.OnClickListener() {
+        editActividadButton.setOnClickListener(new View.OnClickListener() { //Boton que nos lleva a actividades
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(EditInformation.this, ActivityScreen.class);
@@ -75,29 +75,29 @@ TextView editPerfilButton,editActividadButton,editHomeButton;
             }
         });
 
-        update.setOnClickListener(new View.OnClickListener() {
+        update.setOnClickListener(new View.OnClickListener() { //Metodo para hacer update
             @Override
             public void onClick(View view) {
                 //String strEmail = Email.getText().toString();
                 //String strPassword = Pass.getText().toString();
-                String strPhone = phone.getText().toString();
-                String strName = name.getText().toString();
-                String strLastname = lastname.getText().toString();
-                HashMap User = new HashMap();
-                User.put("name",strName);
-                User.put("lastname",strLastname);
+                String strPhone = phone.getText().toString(); //Telofono a actualizar
+                String strName = name.getText().toString(); //Nombre a actualizar
+                String strLastname = lastname.getText().toString(); //Apellido a actualizar
+                HashMap User = new HashMap(); //Creamos mapa de hash
+                User.put("name",strName);   //Metemos nombre al maoa
+                User.put("lastname",strLastname); //Metemos el apellido al mapa
                 User.put("phone",strPhone);
 
-                reference.child(userID).updateChildren(User).addOnCompleteListener(new OnCompleteListener() {
+                reference.child(userID).updateChildren(User).addOnCompleteListener(new OnCompleteListener() { //Si la operacion de update es exitosa o falla
                     @Override
                     public void onComplete(@NonNull Task task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(EditInformation.this,"Update in succesfull",Toast.LENGTH_LONG).show();
+                        if(task.isSuccessful()){ //Si es exitosa
+                            Toast.makeText(EditInformation.this,"Actualización exitosa",Toast.LENGTH_LONG).show(); //Mostrar mensaje
                             Intent myIntent = new Intent(EditInformation.this, ProfileScreen.class);
                             startActivity(myIntent);
                             finish();
                         }else{
-                            Toast.makeText(EditInformation.this,"Failed Update",Toast.LENGTH_LONG).show();
+                            Toast.makeText(EditInformation.this,"Actualización fallida",Toast.LENGTH_LONG).show();//Si falla mostrara este mensaje
 
                         }
                     }

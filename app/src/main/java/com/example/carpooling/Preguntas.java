@@ -7,7 +7,7 @@ public class Preguntas {
 
     }
 
-    public Preguntas(String _Title, String _Text) {
+    public Preguntas(String _Title, String _Text) { //Clase de las preguntas
         Title = _Title;
         Text = _Text;
 

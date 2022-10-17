@@ -25,7 +25,7 @@ public class Register1 extends AppCompatActivity {
     TextView Login;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { //Creacion para el metodo de registrar
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register1);
         Email = findViewById(R.id.email);
@@ -38,7 +38,7 @@ public class Register1 extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
-        Login.setOnClickListener(new View.OnClickListener() {
+        Login.setOnClickListener(new View.OnClickListener() { //Boton para ir a login por cualquier cosa
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(Register1.this, Login.class);
@@ -47,7 +47,7 @@ public class Register1 extends AppCompatActivity {
             }
         });
 
-        SignUp.setOnClickListener(new View.OnClickListener() {
+        SignUp.setOnClickListener(new View.OnClickListener() { //Bton para mandar la info y registrarse
             @Override
             public void onClick(View view) {
                 createUser();
@@ -55,7 +55,7 @@ public class Register1 extends AppCompatActivity {
         });
     }
 
-    private void createUser() {
+    private void createUser() { //Pasamos los campos a string
         String strEmail = Email.getText().toString();
         String strPassword = Pass.getText().toString();
         String strPhone = Phone.getText().toString();
@@ -63,7 +63,7 @@ public class Register1 extends AppCompatActivity {
         String strLastname = LastName.getText().toString();
 
 
-        if (strEmail.isEmpty()) {
+        if (strEmail.isEmpty()) { //Verificacion de la info
             Email.setError("Email can not Empty");
             Email.requestFocus();
             return;
@@ -102,27 +102,27 @@ public class Register1 extends AppCompatActivity {
         }
 
 
-        mAuth.createUserWithEmailAndPassword(strEmail, strPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword(strEmail, strPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() { //Metodo de firebase para crear usuario
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    User user = new User(strName,strLastname,strPhone,strEmail);
-                    FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                if (task.isSuccessful()) { //Si es correcto todo
+                    User user = new User(strName,strLastname,strPhone,strEmail); //Creamos un objeto en case a nuestra informacion de los campos
+                    FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() { //Elegimos la db donde guardar nuestra info, al igual que definir al usuario y asignarle un id
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(Register1.this, "User Created", Toast.LENGTH_LONG).show();
+                                Toast.makeText(Register1.this, "Usuario creado", Toast.LENGTH_LONG).show(); //Mensaje de exito
           Intent intent = new Intent(Register1.this, LandingPage.class);
                     startActivity(intent);
                     finish();
                             }else{
-                                Toast.makeText(Register1.this, "Failed to register, try again", Toast.LENGTH_LONG).show();
+                                Toast.makeText(Register1.this, "Hubo un error intenta nuevamente", Toast.LENGTH_LONG).show();
 
                             }
                         }
                     });
-                } else {
-                    Toast.makeText(Register1.this, "Failed to register, try again", Toast.LENGTH_LONG).show();
+                } else { //Si surge error al registrar
+                    Toast.makeText(Register1.this, "Hubo un error intenta nuevamente", Toast.LENGTH_LONG).show();
                 }
             }
         });
