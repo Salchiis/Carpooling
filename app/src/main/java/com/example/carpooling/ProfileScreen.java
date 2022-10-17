@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 public class ProfileScreen extends AppCompatActivity {
 
         Button logOut;
-        TextView helpButton;
+        TextView helpButton,editProfileButton;
         FirebaseUser user;
         DatabaseReference reference;
         String userID;
@@ -33,6 +33,7 @@ public class ProfileScreen extends AppCompatActivity {
         setContentView(R.layout.activity_profile_screen);
         logOut = findViewById(R.id.logOutButton);
         helpButton = findViewById(R.id.helpButton);
+        editProfileButton = findViewById(R.id.editProfileButton);
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,6 +46,13 @@ public class ProfileScreen extends AppCompatActivity {
             }
         });
 
+        editProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ProfileScreen.this, EditInformation.class);
+                startActivity(myIntent);
+            }
+        });
 
         helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
