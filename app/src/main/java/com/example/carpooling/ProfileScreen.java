@@ -80,6 +80,7 @@ public class ProfileScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(ProfileScreen.this, Questions1.class);
                 startActivity(myIntent);
+
             }
         });
 

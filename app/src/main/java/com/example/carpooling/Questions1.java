@@ -52,17 +52,7 @@ public class Questions1 extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference("Preguntas");
     }
 
-    @Override
-    public void onBackPressed() {
-        if (back_pressed + TIME_DELAY > System.currentTimeMillis()) {
-            super.onBackPressed();
-            System.exit(0);
-        } else {
-            Toast.makeText(getBaseContext(), "Press once again to exit!",
-                    Toast.LENGTH_SHORT).show();
-        }
-        back_pressed = System.currentTimeMillis();
-    }
+
 
 
 }
