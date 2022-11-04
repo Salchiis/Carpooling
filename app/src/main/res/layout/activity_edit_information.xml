@@ -7,8 +7,23 @@
     tools:context=".EditInformation">
 
     <Button
+        android:id="@+id/upgradeButton"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+
+        android:backgroundTint="@color/bluerey"
+        android:text="¡Quiero ser conductor!"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.866" />
+
+    <Button
         android:id="@+id/updateButton"
-        android:layout_width="230dp"
+        android:layout_width="250dp"
         android:layout_height="40dp"
 
         android:backgroundTint="@color/bluerey"

@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 public class ProfileScreen extends AppCompatActivity {
 
         Button logOut;
-        TextView helpButton,editProfileButton,profilePerfilButton,profileActividadButton,profileHomeButton;;
+        TextView helpButton,editProfileButton,profilePerfilButton,profileActividadButton,profileHomeButton;
         FirebaseUser user;
         DatabaseReference reference;
         String userID;
@@ -36,7 +36,6 @@ public class ProfileScreen extends AppCompatActivity {
         editProfileButton = findViewById(R.id.editProfileButton);
         profileHomeButton = findViewById(R.id.profileHomeButton);
         profileActividadButton = findViewById(R.id.profileActividadButton);
-
         profileHomeButton.setOnClickListener(new View.OnClickListener() { //para ur a home
             @Override
             public void onClick(View view) {
@@ -93,11 +92,19 @@ public class ProfileScreen extends AppCompatActivity {
         final TextView emailTextView = findViewById(R.id.emailAddress);
         final TextView phoneTextView = findViewById(R.id.phoneAddress);
 
+        //final TextView modelTextView =  findViewById(R.id.modelAddress);
+        //final TextView placasTextView =  findViewById(R.id.placasAddress);
+        //final TextView reviewsTextView =  findViewById(R.id.reviewsAddress);
+        //final TextView tripsTextView =  findViewById(R.id.textViewAddress);
+        //definir rating bar
+
+
+
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() { //Para jalar la info del usuario de la db
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                     User userProfile = snapshot.getValue(User.class);
-                    if (userProfile !=null){
+                    if (userProfile !=null){ //Ingresar bool si es conductor
                         String name = userProfile.name;
                         String lastname = userProfile.lastname;
                         String email = userProfile.email;

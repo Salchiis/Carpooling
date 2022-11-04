@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class EditInformation extends AppCompatActivity {
 
-    Button update;  //Boton para hacer el update
+    Button update,upgradeButton;  //Boton para hacer el update
     EditText name,lastname,phone,location; //Etiquetas a modificar
     FirebaseUser user; //Usuario activo
     FirebaseAuth mAuth; //Autentificador con firebase
@@ -47,6 +47,17 @@ public class EditInformation extends AppCompatActivity {
         editPerfilButton = findViewById(R.id.editPerfilButton);
         editActividadButton = findViewById(R.id.editActividadButton);
         editHomeButton = findViewById(R.id.editHomeButton);
+        upgradeButton = findViewById(R.id.upgradeButton);
+
+        upgradeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(EditInformation.this, upgradeProfile.class);
+                startActivity(myIntent);
+               
+            }
+        });
+
 
         editPerfilButton.setOnClickListener(new View.OnClickListener() { //Boton que nos lleva al perfil
             @Override
