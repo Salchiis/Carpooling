@@ -15,8 +15,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +29,6 @@ public class EditInformation extends AppCompatActivity {
     Button update,upgradeButton;  //Boton para hacer el update
     EditText name,lastname,phone,location; //Etiquetas a modificar
     FirebaseUser user; //Usuario activo
-    FirebaseAuth mAuth; //Autentificador con firebase
     TextView editPerfilButton,editActividadButton,editHomeButton;
     DatabaseReference reference;    //Referencia  a que tablas vamos a mdooficiar
     String userID; //Guardaremos el id del usuario para saber que campo modificiar
@@ -36,10 +38,9 @@ public class EditInformation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) { //Encontrar todo por ID
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_information);
-        name = findViewById(R.id.nameAddress2);
-        lastname = findViewById(R.id.lastnameAddress2);
-        phone = findViewById(R.id.phoneAddress2);
-        location = findViewById(R.id.locationAddress2);
+        final EditText nameEditText = findViewById(R.id.nameAddress2);
+        final EditText lastnameEditText = findViewById(R.id.lastnameAddress2);
+        final EditText phoneEditText = findViewById(R.id.phoneAddress2);
         update = findViewById(R.id.updateButton);
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users"); //Hacemos refencia a nuestra tabla Users
@@ -86,14 +87,37 @@ public class EditInformation extends AppCompatActivity {
             }
         });
 
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() { //Para jalar la info del usuario de la db
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue(User.class);
+                if (userProfile !=null){ //Ingresar bool si es conductor
+                    String name = userProfile.name;
+                    String lastname = userProfile.lastname;
+                    String email = userProfile.email;
+                    String phone = userProfile.phone;
+                    nameEditText.setText(name);
+                    lastnameEditText.setText(lastname);
+                    phoneEditText.setText(phone);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(EditInformation.this, "Algo fallo", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
         update.setOnClickListener(new View.OnClickListener() { //Metodo para hacer update
             @Override
             public void onClick(View view) {
                 //String strEmail = Email.getText().toString();
                 //String strPassword = Pass.getText().toString();
-                String strPhone = phone.getText().toString(); //Telofono a actualizar
-                String strName = name.getText().toString(); //Nombre a actualizar
-                String strLastname = lastname.getText().toString(); //Apellido a actualizar
+                String strPhone = phoneEditText.getText().toString(); //Telofono a actualizar
+                String strName = nameEditText.getText().toString(); //Nombre a actualizar
+                String strLastname = lastnameEditText.getText().toString(); //Apellido a actualizar
                 HashMap User = new HashMap(); //Creamos mapa de hash
                 User.put("name",strName);   //Metemos nombre al maoa
                 User.put("lastname",strLastname); //Metemos el apellido al mapa

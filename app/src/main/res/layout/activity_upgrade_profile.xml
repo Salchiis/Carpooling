@@ -6,21 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".upgradeProfile">
 
-    <Button
-        android:id="@+id/btnChoose2"
-        android:layout_width="340dp"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:text="Foto lateral del vehiculo"
+    <TextView
+        android:id="@+id/nameAddressTitle3"
+        android:layout_width="133dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="48dp"
+
+        android:text="Modelo del carro"
+        android:textColor="@color/bluerey"
+        android:textSize="15dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.718"
+        app:layout_constraintEnd_toStartOf="@+id/nameAddress2"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.572" />
+        app:layout_constraintVertical_bias="0.187" />
+
+    <TextView
+        android:id="@+id/nameAddressTitle4"
+        android:layout_width="133dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="48dp"
+
+        android:text="Placas"
+        android:textColor="@color/bluerey"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nameAddress2"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.323" />
 
     <Button
-        android:id="@+id/uploadButon"
+        android:id="@+id/uploadButton"
         android:layout_width="141dp"
         android:layout_height="55dp"
         android:backgroundTint="#009688"
@@ -28,64 +49,38 @@
         app:cornerRadius="40px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintVertical_bias="0.477" />
 
     <EditText
         android:id="@+id/modelTextView"
-        android:layout_width="219dp"
-        android:layout_height="48dp"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
         android:ems="10"
-        android:hint="Ejemplo: Audi A3"
+        android:hint="Ejemplo: Audi A3 2007"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.265"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.241" />
+        app:layout_constraintVertical_bias="0.237" />
 
     <EditText
         android:id="@+id/placasTextView"
-        android:layout_width="221dp"
-        android:layout_height="48dp"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:hint="Ejemplo: OW2-APX"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.268"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376" />
-
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Placas"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.321" />
-
-    <TextView
-        android:id="@+id/textView40"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Modelo de carro"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintVertical_bias="0.377" />
 
     <TextView
         android:id="@+id/textView41"
@@ -97,21 +92,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.313"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintVertical_bias="0.077" />
 
-    <Button
-        android:id="@+id/btnChoose"
-        android:layout_width="340dp"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:text="Foto de licencia de conductir"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.718"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.481" />
 </androidx.constraintlayout.widget.ConstraintLayout>

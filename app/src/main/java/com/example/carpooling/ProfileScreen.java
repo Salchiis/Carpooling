@@ -25,7 +25,9 @@ public class ProfileScreen extends AppCompatActivity {
         FirebaseUser user;
         DatabaseReference reference;
         String userID;
-        private static final int TIME_DELAY = 2000;
+    boolean Conductor=false;
+
+    private static final int TIME_DELAY = 2000;
         private static long back_pressed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,13 +93,19 @@ public class ProfileScreen extends AppCompatActivity {
         final TextView lastnameTextView = findViewById(R.id.lastNameAddress);
         final TextView emailTextView = findViewById(R.id.emailAddress);
         final TextView phoneTextView = findViewById(R.id.phoneAddress);
+        TextView modelTextView = findViewById(R.id.modelAddress);
+        TextView modelAddressTitle = findViewById(R.id.modelAddressTitle);
+        TextView matriculaTextView = findViewById(R.id.matriculaAddress);
+        TextView matriculaAddressTitle = findViewById(R.id.matriculaAddressTitle);
+        System.out.println(Conductor);
+
+
 
         //final TextView modelTextView =  findViewById(R.id.modelAddress);
         //final TextView placasTextView =  findViewById(R.id.placasAddress);
         //final TextView reviewsTextView =  findViewById(R.id.reviewsAddress);
         //final TextView tripsTextView =  findViewById(R.id.textViewAddress);
         //definir rating bar
-
 
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() { //Para jalar la info del usuario de la db
@@ -109,10 +117,24 @@ public class ProfileScreen extends AppCompatActivity {
                         String lastname = userProfile.lastname;
                         String email = userProfile.email;
                         String phone = userProfile.phone;
+                        String marca = userProfile.coche;
+                        Conductor= userProfile.isConductor;
                         nameTextView.setText(name);
                         lastnameTextView.setText(lastname);
                         emailTextView.setText(email);
                         phoneTextView.setText(phone);
+                        modelTextView.setText(marca);
+                        if (!Conductor){
+                            modelTextView.setVisibility(View.GONE);
+                            modelAddressTitle.setVisibility(View.GONE);
+                            matriculaAddressTitle.setVisibility(View.GONE);
+                            matriculaTextView.setVisibility(View.GONE);
+                        }else{
+                            modelTextView.setVisibility(View.VISIBLE);
+                            modelAddressTitle.setVisibility(View.VISIBLE);
+                            matriculaAddressTitle.setVisibility(View.VISIBLE);
+                            matriculaTextView.setVisibility(View.VISIBLE);
+                        }
                     }
             }
 

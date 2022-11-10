@@ -61,7 +61,9 @@ public class Register1 extends AppCompatActivity {
         String strPhone = Phone.getText().toString();
         String strName = Name.getText().toString();
         String strLastname = LastName.getText().toString();
-
+        String strMatricula = "";
+        String strCoche = "";
+        Boolean strConductor = false;
 
         if (strEmail.isEmpty()) { //Verificacion de la info
             Email.setError("Email can not Empty");
@@ -106,7 +108,7 @@ public class Register1 extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) { //Si es correcto todo
-                    User user = new User(strName,strLastname,strPhone,strEmail); //Creamos un objeto en case a nuestra informacion de los campos
+                    User user = new User(strName,strLastname,strPhone,strEmail,strCoche,strMatricula,strConductor); //Creamos un objeto en case a nuestra informacion de los campos
                     FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() { //Elegimos la db donde guardar nuestra info, al igual que definir al usuario y asignarle un id
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
