@@ -98,8 +98,10 @@ public class ProfileScreen extends AppCompatActivity {
         TextView matriculaTextView = findViewById(R.id.matriculaAddress);
         TextView matriculaAddressTitle = findViewById(R.id.matriculaAddressTitle);
         System.out.println(Conductor);
-
-
+        TextView califAddressTitle = findViewById(R.id.califAddressTitle);
+        TextView viajesAddressTitle = findViewById(R.id.viajesAddressTitle);
+        TextView viajesAddress = findViewById(R.id.califAddress);
+        TextView califAddress = findViewById(R.id.viajesAddress);
 
         //final TextView modelTextView =  findViewById(R.id.modelAddress);
         //final TextView placasTextView =  findViewById(R.id.placasAddress);
@@ -129,11 +131,19 @@ public class ProfileScreen extends AppCompatActivity {
                             modelAddressTitle.setVisibility(View.GONE);
                             matriculaAddressTitle.setVisibility(View.GONE);
                             matriculaTextView.setVisibility(View.GONE);
+                            califAddressTitle.setVisibility(View.GONE);
+                            viajesAddressTitle.setVisibility(View.GONE);
+                            viajesAddress.setVisibility(View.GONE);
+                        califAddress.setVisibility(View.GONE);
                         }else{
                             modelTextView.setVisibility(View.VISIBLE);
                             modelAddressTitle.setVisibility(View.VISIBLE);
                             matriculaAddressTitle.setVisibility(View.VISIBLE);
                             matriculaTextView.setVisibility(View.VISIBLE);
+                            califAddressTitle.setVisibility(View.VISIBLE);
+                            viajesAddressTitle.setVisibility(View.VISIBLE);
+                            viajesAddress.setVisibility(View.VISIBLE);
+                            califAddress.setVisibility(View.VISIBLE);
                         }
                     }
             }
