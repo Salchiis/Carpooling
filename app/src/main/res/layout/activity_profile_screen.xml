@@ -13,7 +13,7 @@
         android:src="@drawable/ic_baseline_person_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.12" />
@@ -35,7 +35,7 @@
     <Button
         android:id="@+id/editProfileButton"
         android:layout_width="230dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="128dp"
         android:backgroundTint="#009688"
@@ -52,7 +52,7 @@
     <Button
         android:id="@+id/logOutButton"
         android:layout_width="230dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="80dp"
         android:backgroundTint="@color/bluerey"
         android:text="Log Out"
@@ -68,7 +68,7 @@
     <Button
         android:id="@+id/helpButton"
         android:layout_width="230dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:backgroundTint="@color/bluerey"
 
         android:text="Ayuda y preguntas"
@@ -90,6 +90,82 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.597"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.304" />
+
+    <TextView
+        android:id="@+id/califAddress"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:gravity="left"
+        android:text="4.5"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.168" />
+
+    <TextView
+        android:id="@+id/viajesAddress"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:gravity="left"
+        android:text="400"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.11" />
+
+    <TextView
+        android:id="@+id/viajesAddressTitle"
+        android:layout_width="129dp"
+        android:layout_height="25dp"
+        android:text="Total de viajes "
+        android:textColor="@color/bluerey"
+
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.11" />
+
+    <TextView
+        android:id="@+id/califAddressTitle"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:text="Calificación"
+        android:textColor="@color/bluerey"
+
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.169" />
+
+    <TextView
+        android:id="@+id/nameAddressTitle5"
+        android:layout_width="75dp"
+        android:layout_height="25dp"
+        android:text="Nombre "
+        android:textColor="@color/bluerey"
+
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nameAddress"
+        app:layout_constraintHorizontal_bias="0.449"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.304" />

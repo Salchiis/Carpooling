@@ -3,12 +3,12 @@ package com.example.carpooling;
 public class User {
     public String name,lastname,phone,email,coche,matricula;
     public boolean isConductor = false;
-   // public int totalviajes,totalreseñas,calificacion;
+   public int totalviajes,calificacion;
     public  User(){
 
     }
 
-    public User(String _name,String _lastname, String _phone,String _email,String _coche,String _matricula,Boolean _isConductor){ //Clase de creacion del usuario Prototipo V1.0
+    public User(String _name,String _lastname, String _phone,String _email,String _coche,String _matricula,Boolean _isConductor,int _totalviajes, int _calificacion){ //Clase de creacion del usuario Prototipo V1.0
         name = _name; //Nombre
         lastname = _lastname; //Apellido
         phone = _phone; //Telefono
@@ -16,6 +16,8 @@ public class User {
         coche = _coche;
         matricula = _matricula;
         isConductor = _isConductor;
+        calificacion = _calificacion;
+        totalviajes = _totalviajes;
 
     }
 
