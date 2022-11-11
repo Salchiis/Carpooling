@@ -116,7 +116,7 @@ public class Register1 extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
                                 Toast.makeText(Register1.this, "Usuario creado", Toast.LENGTH_LONG).show(); //Mensaje de exito
-          Intent intent = new Intent(Register1.this, LandingPage.class);
+          Intent intent = new Intent(Register1.this, Login.class);
                     startActivity(intent);
                     finish();
                             }else{

@@ -3,6 +3,7 @@ package com.example.carpooling;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 
@@ -10,10 +11,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LandingPage extends AppCompatActivity {
+    MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) { //Metodo princiapl
         super.onCreate(savedInstanceState);
+        player= MediaPlayer.create(LandingPage.this,R.raw.diesof);
+        player.start();
+
         setContentView(R.layout.activity_landing_page);
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();

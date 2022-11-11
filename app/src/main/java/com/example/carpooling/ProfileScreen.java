@@ -120,12 +120,14 @@ public class ProfileScreen extends AppCompatActivity {
                         String email = userProfile.email;
                         String phone = userProfile.phone;
                         String marca = userProfile.coche;
+                        String matricula = userProfile.matricula;
                         Conductor= userProfile.isConductor;
                         nameTextView.setText(name);
                         lastnameTextView.setText(lastname);
                         emailTextView.setText(email);
                         phoneTextView.setText(phone);
                         modelTextView.setText(marca);
+                        matriculaTextView.setText(matricula);
                         if (!Conductor){
                             modelTextView.setVisibility(View.GONE);
                             modelAddressTitle.setVisibility(View.GONE);
