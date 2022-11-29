@@ -41,7 +41,7 @@ public class ProfileScreen extends AppCompatActivity {
         profileHomeButton.setOnClickListener(new View.OnClickListener() { //para ur a home
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ProfileScreen.this, HomeScreen.class);
+                Intent myIntent = new Intent(ProfileScreen.this, publicar_viaje.class);
                 startActivity(myIntent);
                 finish();
             }
