@@ -96,24 +96,24 @@
 
     <TextView
         android:id="@+id/califAddress"
-        android:layout_width="50dp"
-        android:layout_height="25dp"
+        android:layout_width="124dp"
+        android:layout_height="20dp"
         android:gravity="left"
-        android:text="4.5"
+        android:text="Sin calificación"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintHorizontal_bias="0.885"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.168" />
+        app:layout_constraintVertical_bias="0.167" />
 
     <TextView
         android:id="@+id/viajesAddress"
         android:layout_width="50dp"
         android:layout_height="25dp"
         android:gravity="left"
-        android:text="400"
+        android:text="0"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -277,7 +277,7 @@
         android:id="@+id/modelAddressTitle"
         android:layout_width="75dp"
         android:layout_height="25dp"
-        android:text="Carro         : "
+        android:text="Carro"
         android:textColor="@color/bluerey"
 
         android:textSize="15dp"

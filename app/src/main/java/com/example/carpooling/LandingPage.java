@@ -16,8 +16,7 @@ public class LandingPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) { //Metodo princiapl
         super.onCreate(savedInstanceState);
-        player= MediaPlayer.create(LandingPage.this,R.raw.diesof);
-        player.start();
+
 
         setContentView(R.layout.activity_landing_page);
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
