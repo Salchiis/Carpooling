@@ -17,6 +17,14 @@
         <activity
             android:name=".upgradeProfile"
             android:exported="false" />
+                    <activity
+
+            android:name=".publicar_viaje"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".ForgetPassword"
             android:exported="false" />
