@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ProfileScreen extends AppCompatActivity {
 
-        Button logOut;
+        Button logOut,paypalButton;
         TextView helpButton,editProfileButton,profilePerfilButton,profileActividadButton,profileHomeButton;
         FirebaseUser user;
         DatabaseReference reference;
@@ -38,6 +38,15 @@ public class ProfileScreen extends AppCompatActivity {
         editProfileButton = findViewById(R.id.editProfileButton);
         profileHomeButton = findViewById(R.id.profileHomeButton);
         profileActividadButton = findViewById(R.id.profileActividadButton);
+        paypalButton = findViewById(R.id.PaypalButton);
+
+        paypalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ProfileScreen.this, PaypalPage.class);
+                startActivity(myIntent);
+            }
+        });
         profileHomeButton.setOnClickListener(new View.OnClickListener() { //para ur a home
             @Override
             public void onClick(View view) {
