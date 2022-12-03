@@ -20,5 +20,26 @@
     <string name="hora_de_salida">Hora de salida</string>
     <string name="selecciona_una_hora">Selecciona una hora</string>
 
+    <string-array name="salidas">
+        <item>Cafe Borrego</item>
+        <item>Aulas 4</item>
+        <item>Centro estudiantil</item>
+        <item>Rotonda PrepaTec</item>
+        <item>Aulas 2</item>
+    </string-array>
+    <string-array name="llegadas">
+        <item>Villas de atlixco</item>
+        <item>Angelopolis</item>
+        <item>Sonata</item>
+        <item>Walmart Angelopolis</item>
+        <item>La casita del profe</item>
+        <item>Paseo destino</item>
+        <item>Frikiplaza</item>
+        <item>Avenida Juarez</item>
+        <item>Palas Store</item>
 
+
+
+
+    </string-array>
 </resources>

@@ -6,6 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".publicar_viaje">
 
+    <Button
+        android:id="@+id/publicarButton"
+        android:layout_width="198dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#009688"
+        android:text="Publicar viaje"
+        app:cornerRadius="40px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.882" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="137dp"
+        android:layout_height="50dp"
+        android:drawableTop="@drawable/ic_personita"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Perfil"
+        android:textSize="8sp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/profileProfileButton3"
+        android:layout_width="137dp"
+        android:layout_height="50dp"
+        android:drawableTop="@drawable/ic_carretera"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Actividad"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/profileHomeButton3"
+        android:layout_width="137dp"
+        android:layout_height="50dp"
+        android:width="5dp"
+        android:color="#000000"
+        android:drawableTop="@drawable/ic_carrito"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Publicar viaje"
+        android:textSize="8sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <TextView
         android:id="@+id/textView21"
         android:layout_width="411dp"
@@ -22,19 +87,19 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/texto2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/para_poder_publicar_un_viaje_rellena_los_siguientes_campos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintHorizontal_bias="0.404"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintVertical_bias="0.112" />
 
     <TextView
-        android:id="@+id/textView40"
+        android:id="@+id/texto3"
         android:layout_width="134dp"
         android:layout_height="23dp"
         android:text="@string/lugar_de_salida"
@@ -45,39 +110,52 @@
         app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.314" />
+        app:layout_constraintVertical_bias="0.259" />
 
     <Spinner
-        android:id="@+id/tecSalida"
-        android:layout_width="213dp"
-        android:layout_height="52dp"
+        android:id="@+id/salidaSpinner"
+        android:layout_width="210dp"
+        android:layout_height="48dp"
         android:backgroundTint="#000000"
         android:dropDownSelector="@drawable/ic_baseline_home_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.309" />
+        app:layout_constraintVertical_bias="0.25" />
+
+    <Spinner
+        android:id="@+id/llegadaSpinner"
+        android:layout_width="210dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#000000"
+        android:dropDownSelector="@drawable/ic_baseline_home_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.355" />
 
     <TextView
-        android:id="@+id/textView41"
-        android:layout_width="369dp"
-        android:layout_height="34dp"
-        android:text="@string/recuerda_que_el_viaje_es_con_salida_en_el_tec_campus_puebla_para_dirigirte_a_otros_destinos"
+        android:id="@+id/texto1"
+        android:layout_width="376dp"
+        android:layout_height="54dp"
+        android:text="Recuerda_que_el_viaje_es_con_salida_en_el_tec_campus_puebla_para_dirigirte_a_otros_destinos y tienen una ventana de espera de 5 min"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.192" />
+        app:layout_constraintVertical_bias="0.166" />
 
     <TextView
-        android:id="@+id/hora_Salida"
+        android:id="@+id/texto4"
         android:layout_width="130dp"
         android:layout_height="26dp"
-        android:text="@string/hora_de_salida"
+        android:text="Lugar de llegada"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -85,33 +163,150 @@
         app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.392" />
+        app:layout_constraintVertical_bias="0.358" />
 
-    <Button
-        android:id="@+id/button6"
-
-        android:layout_width="213dp"
+    <EditText
+        android:id="@+id/precioInput"
+        android:layout_width="210dp"
         android:layout_height="48dp"
-        android:text="@string/selecciona_una_hora"
-        android:textColorHighlight="#FAF4F4"
-        android:textSize="12sp"
+        android:ems="10"
+        android:hint="Consideralo como apoyo :)"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintVertical_bias="0.762" />
 
     <TextView
-        android:id="@+id/textView44"
-        android:layout_width="131dp"
-        android:layout_height="40dp"
-        android:text="Time"
+        android:id="@+id/texto6"
+        android:layout_width="130dp"
+        android:layout_height="26dp"
+        android:text="Hora de salida"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463" />
+        app:layout_constraintVertical_bias="0.554" />
+
+    <EditText
+        android:id="@+id/horaInput"
+        android:layout_width="210dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Formato de 24 hrs"
+        android:inputType="time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.557" />
+
+    <EditText
+        android:id="@+id/fechaInput"
+        android:layout_width="210dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Dia de viaje"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.459" />
+
+    <TextView
+        android:id="@+id/texto8"
+        android:layout_width="128dp"
+        android:layout_height="43dp"
+        android:text="Precio"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.757" />
+
+    <TextView
+        android:id="@+id/texto5"
+        android:layout_width="130dp"
+        android:layout_height="26dp"
+        android:text="Fecha de salida"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.462" />
+
+    <EditText
+        android:id="@+id/pasajerosInput"
+        android:layout_width="210dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Ejemplo: 3"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.653" />
+
+    <TextView
+        android:id="@+id/texto7"
+        android:layout_width="128dp"
+        android:layout_height="43dp"
+        android:text="Pasajero admitidos"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.655" />
+
+    <TextView
+        android:id="@+id/texto10"
+        android:layout_width="361dp"
+        android:layout_height="199dp"
+        android:background="#2196F3"
+        android:backgroundTint="#03A9F4"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.368" />
+
+    <TextView
+        android:id="@+id/texto9"
+        android:layout_width="333dp"
+        android:layout_height="165dp"
+        android:background="#009688"
+        android:backgroundTint="#009688"
+        android:text="Buenas, esta pantalla solo esta habilitada para conductores, si deseas poder publicar viajes activa la opción de tu perfil, recuerda que la idea es poder apoyar a la comunidad Tec en Puebla :)"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.378" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

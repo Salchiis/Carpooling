@@ -31,7 +31,7 @@ public class ActivityScreen extends AppCompatActivity { //Esta clase sirve para 
         activityHomeScreen.setOnClickListener(new View.OnClickListener() { //Cierra la actividad actual y navega a otra actividad(página)
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ActivityScreen.this, HomeScreen.class);
+                Intent myIntent = new Intent(ActivityScreen.this, publicar_viaje.class);
                 startActivity(myIntent);
                 finish(); //Cierra la actividad para evitar el overflow
             }
