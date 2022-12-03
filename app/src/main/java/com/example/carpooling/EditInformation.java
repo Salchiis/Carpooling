@@ -45,9 +45,7 @@ public class EditInformation extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users"); //Hacemos refencia a nuestra tabla Users
         userID = user.getUid();
-        editPerfilButton = findViewById(R.id.editPerfilButton);
-        editActividadButton = findViewById(R.id.editActividadButton);
-        editHomeButton = findViewById(R.id.editHomeButton);
+
         upgradeButton = findViewById(R.id.upgradeButton);
 
         upgradeButton.setOnClickListener(new View.OnClickListener() {
@@ -60,32 +58,7 @@ public class EditInformation extends AppCompatActivity {
         });
 
 
-        editPerfilButton.setOnClickListener(new View.OnClickListener() { //Boton que nos lleva al perfil
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(EditInformation.this, ProfileScreen.class);
-                startActivity(myIntent);
-                finish();
-            }
-        });
 
-        editHomeButton.setOnClickListener(new View.OnClickListener() { //Boton que nos lleva a Home
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(EditInformation.this, HomeScreen.class);
-                startActivity(myIntent);
-                finish();
-            }
-        });
-
-        editActividadButton.setOnClickListener(new View.OnClickListener() { //Boton que nos lleva a actividades
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(EditInformation.this, ActivityScreen.class);
-                startActivity(myIntent);
-                finish();
-            }
-        });
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() { //Para jalar la info del usuario de la db
             @Override

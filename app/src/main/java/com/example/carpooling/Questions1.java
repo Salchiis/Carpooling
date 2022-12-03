@@ -20,36 +20,7 @@ public class Questions1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions1);
-        questionHomeButton = findViewById(R.id.questionHomeButton);
-        questionActividadButton = findViewById(R.id.questionActividadButton);
-        questionPerfilButton = findViewById(R.id.questionPerfilButton);
 
-        questionHomeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(Questions1.this, HomeScreen.class);
-                startActivity(myIntent);
-                finish();
-            }
-        });
-        questionActividadButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(Questions1.this, ActivityScreen.class);
-                startActivity(myIntent);
-                finish();
-            }
-        });
-        questionPerfilButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(Questions1.this, ProfileScreen.class);
-                startActivity(myIntent);
-                finish();
-            }
-        });
-
-        reference = FirebaseDatabase.getInstance().getReference("Preguntas");
     }
 
 
