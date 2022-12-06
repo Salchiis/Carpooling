@@ -39,12 +39,15 @@ public class ProfileScreen extends AppCompatActivity {
         profileHomeButton = findViewById(R.id.profileHomeButton);
         profileActividadButton = findViewById(R.id.profileActividadButton);
         paypalButton = findViewById(R.id.PaypalButton);
+        profileActividadButton= findViewById(R.id.profileActividadButton);
+
 
         paypalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ProfileScreen.this, PaypalPage.class);
                 startActivity(myIntent);
+                finish();
             }
         });
         profileHomeButton.setOnClickListener(new View.OnClickListener() { //para ur a home
@@ -59,11 +62,12 @@ public class ProfileScreen extends AppCompatActivity {
         profileActividadButton.setOnClickListener(new View.OnClickListener() {//Para ira actividad
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ProfileScreen.this, ActivityScreen.class);
+                Intent myIntent = new Intent(ProfileScreen.this, viajes_publicados.class);
                 startActivity(myIntent);
                 finish();
             }
         });
+
 
         logOut.setOnClickListener(new View.OnClickListener() { //Boton para hacer logout
             @Override

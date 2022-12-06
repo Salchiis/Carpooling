@@ -19,6 +19,30 @@
     <string name="textview">TextView</string>
     <string name="hora_de_salida">Hora de salida</string>
     <string name="selecciona_una_hora">Selecciona una hora</string>
+    <string name="viajes_disponibles">Viajes disponibles</string>
+    <string name="llegada_villas_atlixo">Llegada: VIllas Atlixo</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="fecha_7_12_2022">Fecha: 7/12/2022</string>
+    <string name="salida_aulas_2">Salida: Aulas 2</string>
+    <string name="fecha_7_12_20227">Fecha: 7/12/2022</string>
+    <string name="aceptar2">Aceptar</string>
+    <string name="salida_aulas_4">Salida: Aulas 4</string>
+    <string name="llegada_angelopolis">Llegada: Angelopolis</string>
+    <string name="hora_de_salida_13_30">Hora de salida:13:30</string>
+    <string name="hora_de_salida_9_30">Hora de Salida: 9:30</string>
+    <string name="el_viaje_lo_realizar_s_con">El viaje lo realizarás con:</string>
+    <string name="jesus_arturo">Jesus Arturo</string>
+    <string name="jkl_890">jkl-890</string>
+    <string name="telefono">Telefono:</string>
+    <string name="_0">0</string>
+    <string name="_95124265405">95124265405</string>
+    <string name="en_el_auto">En el auto:</string>
+    <string name="viajes_realizados">Viajes realizados:</string>
+    <string name="estas_seguro_de_realizar_el_viaje">¿Estas seguro de realizar el viaje?</string>
+    <string name="placas">Placas:</string>
+    <string name="al_confirmar_el_viaje_le_mandaremos_una_notificaci_n_al_conductor_para_que_se_ponga_en_contacto_contigo">Al confirmar el viaje le mandaremos una notificación al conductor para que se ponga en contacto contigo</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="audi_a8_2019">audi a8 2019</string>
 
     <string-array name="salidas">
         <item>Cafe Borrego</item>
